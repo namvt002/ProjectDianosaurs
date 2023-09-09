@@ -71,15 +71,14 @@ const getRandomNumber = () => {
 
 // Generate Grid display with random number
 const generateGridDisplay = (dinos, human) => {
-  const gridContainer = document.getElementById("grid")
-  gridContainer.innerHTML = ""
 
   const numbers = [0, 1, 2, 3, 4, 5]
   const randomIndex = Math.ceil(Math.random() * numbers.length)
   const getValueRandom = numbers[randomIndex]
-
   const positionsGrid = [0, 1, 2, 3, 4, 5, 6, 7, getValueRandom]
 
+  const gridContainer = document.getElementById("grid")
+  gridContainer.innerHTML = ""
 
   for (let i = positionsGrid.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -88,7 +87,6 @@ const generateGridDisplay = (dinos, human) => {
 
   for (let i = 0; i < positionsGrid.length; i++) {
     const gridIndex = positionsGrid[i]
-
     const item = document.createElement("div")
     item.className = "grid-item"
 
